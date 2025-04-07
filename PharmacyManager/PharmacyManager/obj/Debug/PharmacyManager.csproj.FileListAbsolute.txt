@@ -10,3 +10,5 @@ C:\Users\irish\Documents\COMP583\COMP-583-Team-1\PharmacyManager\PharmacyManager
 C:\Users\irish\Documents\COMP583\COMP-583-Team-1\PharmacyManager\PharmacyManager\bin\Debug\PharmacyManager.pdb
 C:\Users\irish\Documents\COMP583\COMP-583-Team-1\PharmacyManager\PharmacyManager\obj\Debug\PharmacyManager.exe
 C:\Users\irish\Documents\COMP583\COMP-583-Team-1\PharmacyManager\PharmacyManager\obj\Debug\PharmacyManager.pdb
+C:\Users\irish\Documents\COMP583\COMP-583-Team-1\PharmacyManager\PharmacyManager\obj\Debug\PharmacyManager.MainForm.resources
+C:\Users\irish\Documents\COMP583\COMP-583-Team-1\PharmacyManager\PharmacyManager\obj\Debug\PharmacyManager.InventoryPage.resources

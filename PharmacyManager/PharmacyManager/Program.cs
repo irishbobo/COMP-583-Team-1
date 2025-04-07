@@ -16,7 +16,7 @@ namespace PharmacyManager
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new LogInForm2());
+            Application.Run(new LogInForm());
         }
     }
 }

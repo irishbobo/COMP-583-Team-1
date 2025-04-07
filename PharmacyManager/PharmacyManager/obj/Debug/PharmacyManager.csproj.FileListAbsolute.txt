@@ -1,0 +1,12 @@
+C:\Users\irish\Documents\COMP583\COMP-583-Team-1\PharmacyManager\PharmacyManager\obj\Debug\PharmacyManager.csproj.AssemblyReference.cache
+C:\Users\irish\Documents\COMP583\COMP-583-Team-1\PharmacyManager\PharmacyManager\obj\Debug\PharmacyManager.LogInForm.resources
+C:\Users\irish\Documents\COMP583\COMP-583-Team-1\PharmacyManager\PharmacyManager\obj\Debug\PharmacyManager.Properties.Resources.resources
+C:\Users\irish\Documents\COMP583\COMP-583-Team-1\PharmacyManager\PharmacyManager\obj\Debug\PharmacyManager.csproj.GenerateResource.cache
+C:\Users\irish\Documents\COMP583\COMP-583-Team-1\PharmacyManager\PharmacyManager\obj\Debug\PharmacyManager.csproj.CoreCompileInputs.cache
+C:\Users\irish\Documents\COMP583\COMP-583-Team-1\PharmacyManager\PharmacyManager\bin\Debug\Database1.mdf
+C:\Users\irish\Documents\COMP583\COMP-583-Team-1\PharmacyManager\PharmacyManager\bin\Debug\Database1_log.ldf
+C:\Users\irish\Documents\COMP583\COMP-583-Team-1\PharmacyManager\PharmacyManager\bin\Debug\PharmacyManager.exe.config
+C:\Users\irish\Documents\COMP583\COMP-583-Team-1\PharmacyManager\PharmacyManager\bin\Debug\PharmacyManager.exe
+C:\Users\irish\Documents\COMP583\COMP-583-Team-1\PharmacyManager\PharmacyManager\bin\Debug\PharmacyManager.pdb
+C:\Users\irish\Documents\COMP583\COMP-583-Team-1\PharmacyManager\PharmacyManager\obj\Debug\PharmacyManager.exe
+C:\Users\irish\Documents\COMP583\COMP-583-Team-1\PharmacyManager\PharmacyManager\obj\Debug\PharmacyManager.pdb

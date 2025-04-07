@@ -98,6 +98,9 @@
     <Compile Include="ReportsPage.Designer.cs">
       <DependentUpon>ReportsPage.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="AlertsPage.resx">
+      <DependentUpon>AlertsPage.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="InvenoryPage.resx">
       <DependentUpon>InvenoryPage.cs</DependentUpon>
     </EmbeddedResource>

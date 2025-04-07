@@ -27,7 +27,7 @@ namespace PharmacyManager
 
         private void btnAlerts_Click(object sender, EventArgs e)
         {
-            //LoadPage(new AlertsPage());
+            LoadPage(new AlertsPage());
         }
 
         private void btnInventory_Click(object sender, EventArgs e)
@@ -37,7 +37,7 @@ namespace PharmacyManager
 
         private void btnReports_Click(object sender, EventArgs e)
         {
-            //LoadPage(new ReportsPage());
+            LoadPage(new ReportsPage());
         }
 
         private void btnLogout_Click(object sender, EventArgs e)

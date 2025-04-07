@@ -3,27 +3,27 @@
   "WorkspaceRootPath": "C:\\Users\\irish\\Documents\\COMP583\\COMP-583-Team-1\\PharmacyManager\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{9274B19C-55B9-4868-93A8-8B8548AAB487}|PharmacyManager\\PharmacyManager.csproj|C:\\Users\\irish\\Documents\\COMP583\\COMP-583-Team-1\\PharmacyManager\\pharmacymanager\\mainform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9274B19C-55B9-4868-93A8-8B8548AAB487}|PharmacyManager\\PharmacyManager.csproj|solutionrelative:pharmacymanager\\mainform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9274B19C-55B9-4868-93A8-8B8548AAB487}|PharmacyManager\\PharmacyManager.csproj|C:\\Users\\irish\\Documents\\COMP583\\COMP-583-Team-1\\PharmacyManager\\pharmacymanager\\invenorypage.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9274B19C-55B9-4868-93A8-8B8548AAB487}|PharmacyManager\\PharmacyManager.csproj|solutionrelative:pharmacymanager\\invenorypage.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9274B19C-55B9-4868-93A8-8B8548AAB487}|PharmacyManager\\PharmacyManager.csproj|C:\\Users\\irish\\Documents\\COMP583\\COMP-583-Team-1\\PharmacyManager\\pharmacymanager\\invenorypage.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{9274B19C-55B9-4868-93A8-8B8548AAB487}|PharmacyManager\\PharmacyManager.csproj|solutionrelative:pharmacymanager\\invenorypage.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{9274B19C-55B9-4868-93A8-8B8548AAB487}|PharmacyManager\\PharmacyManager.csproj|c:\\users\\irish\\documents\\comp583\\comp-583-team-1\\pharmacymanager\\pharmacymanager\\mainform.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{9274B19C-55B9-4868-93A8-8B8548AAB487}|PharmacyManager\\PharmacyManager.csproj|solutionrelative:pharmacymanager\\mainform.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{9274B19C-55B9-4868-93A8-8B8548AAB487}|PharmacyManager\\PharmacyManager.csproj|c:\\users\\irish\\documents\\comp583\\comp-583-team-1\\pharmacymanager\\pharmacymanager\\mainform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{9274B19C-55B9-4868-93A8-8B8548AAB487}|PharmacyManager\\PharmacyManager.csproj|solutionrelative:pharmacymanager\\mainform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{9274B19C-55B9-4868-93A8-8B8548AAB487}|PharmacyManager\\PharmacyManager.csproj|c:\\users\\irish\\documents\\comp583\\comp-583-team-1\\pharmacymanager\\pharmacymanager\\invenorypage.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{9274B19C-55B9-4868-93A8-8B8548AAB487}|PharmacyManager\\PharmacyManager.csproj|solutionrelative:pharmacymanager\\invenorypage.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{9274B19C-55B9-4868-93A8-8B8548AAB487}|PharmacyManager\\PharmacyManager.csproj|c:\\users\\irish\\documents\\comp583\\comp-583-team-1\\pharmacymanager\\pharmacymanager\\invenorypage.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{9274B19C-55B9-4868-93A8-8B8548AAB487}|PharmacyManager\\PharmacyManager.csproj|C:\\Users\\irish\\Documents\\COMP583\\COMP-583-Team-1\\PharmacyManager\\pharmacymanager\\invenorypage.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{9274B19C-55B9-4868-93A8-8B8548AAB487}|PharmacyManager\\PharmacyManager.csproj|solutionrelative:pharmacymanager\\invenorypage.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{9274B19C-55B9-4868-93A8-8B8548AAB487}|PharmacyManager\\PharmacyManager.csproj|c:\\users\\irish\\documents\\comp583\\comp-583-team-1\\pharmacymanager\\pharmacymanager\\invenorypage.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{9274B19C-55B9-4868-93A8-8B8548AAB487}|PharmacyManager\\PharmacyManager.csproj|solutionrelative:pharmacymanager\\invenorypage.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{9274B19C-55B9-4868-93A8-8B8548AAB487}|PharmacyManager\\PharmacyManager.csproj|c:\\users\\irish\\documents\\comp583\\comp-583-team-1\\pharmacymanager\\pharmacymanager\\mainform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "AbsoluteMoniker": "D:0:0:{9274B19C-55B9-4868-93A8-8B8548AAB487}|PharmacyManager\\PharmacyManager.csproj|C:\\Users\\irish\\Documents\\COMP583\\COMP-583-Team-1\\PharmacyManager\\pharmacymanager\\mainform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{9274B19C-55B9-4868-93A8-8B8548AAB487}|PharmacyManager\\PharmacyManager.csproj|solutionrelative:pharmacymanager\\mainform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     }
   ],
@@ -34,30 +34,30 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 1,
+          "SelectedChildIndex": 0,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 0,
               "Title": "MainForm.cs",
               "DocumentMoniker": "C:\\Users\\irish\\Documents\\COMP583\\COMP-583-Team-1\\PharmacyManager\\PharmacyManager\\MainForm.cs",
               "RelativeDocumentMoniker": "PharmacyManager\\MainForm.cs",
               "ToolTip": "C:\\Users\\irish\\Documents\\COMP583\\COMP-583-Team-1\\PharmacyManager\\PharmacyManager\\MainForm.cs",
               "RelativeToolTip": "PharmacyManager\\MainForm.cs",
-              "ViewState": "AgIAAAkAAAAAAAAAAAAAACQAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAABsAAAAAAAAAAAAYwCQAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-04-07T20:12:00.56Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 3,
               "Title": "MainForm.Designer.cs",
               "DocumentMoniker": "C:\\Users\\irish\\Documents\\COMP583\\COMP-583-Team-1\\PharmacyManager\\PharmacyManager\\MainForm.Designer.cs",
               "RelativeDocumentMoniker": "PharmacyManager\\MainForm.Designer.cs",
               "ToolTip": "C:\\Users\\irish\\Documents\\COMP583\\COMP-583-Team-1\\PharmacyManager\\PharmacyManager\\MainForm.Designer.cs",
               "RelativeToolTip": "PharmacyManager\\MainForm.Designer.cs",
-              "ViewState": "AgIAABkAAAAAAAAAAAAQwBwAAAA9AAAAAAAAAA==",
+              "ViewState": "AgIAAAsAAAAAAAAAAAAAwF4AAAAPAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-04-07T20:09:22.993Z",
               "EditorCaption": ""
@@ -76,7 +76,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 4,
               "Title": "InvenoryPage.Designer.cs",
               "DocumentMoniker": "C:\\Users\\irish\\Documents\\COMP583\\COMP-583-Team-1\\PharmacyManager\\PharmacyManager\\InvenoryPage.Designer.cs",
               "RelativeDocumentMoniker": "PharmacyManager\\InvenoryPage.Designer.cs",
@@ -89,7 +89,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 2,
               "Title": "InvenoryPage.cs [Design]",
               "DocumentMoniker": "C:\\Users\\irish\\Documents\\COMP583\\COMP-583-Team-1\\PharmacyManager\\PharmacyManager\\InvenoryPage.cs",
               "RelativeDocumentMoniker": "PharmacyManager\\InvenoryPage.cs",
@@ -101,13 +101,13 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 1,
               "Title": "InvenoryPage.cs",
               "DocumentMoniker": "C:\\Users\\irish\\Documents\\COMP583\\COMP-583-Team-1\\PharmacyManager\\PharmacyManager\\InvenoryPage.cs",
               "RelativeDocumentMoniker": "PharmacyManager\\InvenoryPage.cs",
               "ToolTip": "C:\\Users\\irish\\Documents\\COMP583\\COMP-583-Team-1\\PharmacyManager\\PharmacyManager\\InvenoryPage.cs",
               "RelativeToolTip": "PharmacyManager\\InvenoryPage.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAAOAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAA0AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-04-07T20:18:08.123Z",
               "EditorCaption": ""

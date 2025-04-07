@@ -94,7 +94,7 @@ namespace PharmacyManager
             // panelContent
             // 
             this.panelContent.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelContent.Location = new System.Drawing.Point(0, 0);
+            this.panelContent.Location = new System.Drawing.Point(150, 0); // Start after sidebar
             this.panelContent.Name = "panelContent";
             this.panelContent.Size = new System.Drawing.Size(200, 100);
             this.panelContent.TabIndex = 0;

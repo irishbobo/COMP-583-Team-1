@@ -10,12 +10,11 @@ using System.Windows.Forms;
 
 namespace PharmacyManager
 {
-    public partial class InventoryPage : UserControl
+    public partial class ReportsPage : UserControl
     {
-        public InventoryPage()
+        public ReportsPage()
         {
             InitializeComponent();
         }
     }
 }
-

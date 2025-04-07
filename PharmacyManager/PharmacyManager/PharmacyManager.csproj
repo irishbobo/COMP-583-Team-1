@@ -61,6 +61,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AlertsPage.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="AlertsPage.Designer.cs">
+      <DependentUpon>AlertsPage.cs</DependentUpon>
+    </Compile>
     <Compile Include="Database1DataSet.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -86,6 +92,12 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ReportsPage.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ReportsPage.Designer.cs">
+      <DependentUpon>ReportsPage.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="InvenoryPage.resx">
       <DependentUpon>InvenoryPage.cs</DependentUpon>
     </EmbeddedResource>

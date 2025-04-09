@@ -52,6 +52,7 @@ namespace PharmacyManager
             this.textBoxAddName.Size = new System.Drawing.Size(100, 26);
             this.textBoxAddName.TabIndex = 0;
             this.textBoxAddName.Text = "Name";
+            this.textBoxAddName.UseWaitCursor = true;
             // 
             // btnAdd
             // 

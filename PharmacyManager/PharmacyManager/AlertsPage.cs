@@ -33,14 +33,12 @@ namespace PharmacyManager
             if (listViewAlerts.SelectedItems.Count > 0)
             {
                 ListViewItem item = listViewAlerts.SelectedItems[0];
-                listViewAlerts.Items.Remove(item);               
+                listViewAlerts.Items.Remove(item);
             }
             else
             {
                 TestAlert();
-            }
-
-              
+            } 
         }
     }
 }

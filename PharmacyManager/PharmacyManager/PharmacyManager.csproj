@@ -61,10 +61,15 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AlertsPage.cs">
+    <Compile Include="Backend\AlertEntry.cs" />
+    <Compile Include="Backend\DatabaseManager.cs" />
+    <Compile Include="Backend\DrugEntry.cs" />
+    <Compile Include="Backend\HistoryEntry.cs" />
+    <Compile Include="Backend\Interfaces\IDatabaseParesable.cs" />
+    <Compile Include="Frontend\AlertsPage.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="AlertsPage.Designer.cs">
+    <Compile Include="Frontend\AlertsPage.Designer.cs">
       <DependentUpon>AlertsPage.cs</DependentUpon>
     </Compile>
     <Compile Include="Database1DataSet.Designer.cs">
@@ -72,42 +77,42 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Database1DataSet.xsd</DependentUpon>
     </Compile>
-    <Compile Include="InvenoryPage.cs">
+    <Compile Include="Frontend\InvenoryPage.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="InvenoryPage.Designer.cs">
+    <Compile Include="Frontend\InvenoryPage.Designer.cs">
       <DependentUpon>InvenoryPage.cs</DependentUpon>
     </Compile>
-    <Compile Include="MainForm.cs">
+    <Compile Include="Frontend\MainForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="MainForm.Designer.cs">
+    <Compile Include="Frontend\MainForm.Designer.cs">
       <DependentUpon>MainForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="LogInForm.cs">
+    <Compile Include="Frontend\LogInForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="LogInForm.Designer.cs">
+    <Compile Include="Frontend\LogInForm.Designer.cs">
       <DependentUpon>LogInForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="ReportsPage.cs">
+    <Compile Include="Frontend\ReportsPage.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="ReportsPage.Designer.cs">
+    <Compile Include="Frontend\ReportsPage.Designer.cs">
       <DependentUpon>ReportsPage.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="AlertsPage.resx">
+    <EmbeddedResource Include="Frontend\AlertsPage.resx">
       <DependentUpon>AlertsPage.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="InvenoryPage.resx">
+    <EmbeddedResource Include="Frontend\InvenoryPage.resx">
       <DependentUpon>InvenoryPage.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="MainForm.resx">
+    <EmbeddedResource Include="Frontend\MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="LogInForm.resx">
+    <EmbeddedResource Include="Frontend\LogInForm.resx">
       <DependentUpon>LogInForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
@@ -119,7 +124,7 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="ReportsPage.resx">
+    <EmbeddedResource Include="Frontend\ReportsPage.resx">
       <DependentUpon>ReportsPage.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Database1DataSet.xsc">
@@ -167,5 +172,6 @@
       <Install>false</Install>
     </BootstrapperPackage>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

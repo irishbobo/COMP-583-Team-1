@@ -1,4 +1,5 @@
-﻿using System;
+﻿using PharmacyManager.Backend;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -14,6 +15,10 @@ namespace PharmacyManager
         [STAThread]
         static void Main()
         {
+            List<DrugEntry> drugs = DatabaseManager.GetRows<DrugEntry>("Drug", "DrugId");
+            List<AlertEntry> alerts = DatabaseManager.GetRows<AlertEntry>("Alert", "AlertId");
+            List<HistoryEntry> history = DatabaseManager.GetRows<HistoryEntry>("History", "HistoryId");
+
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new LogInForm());

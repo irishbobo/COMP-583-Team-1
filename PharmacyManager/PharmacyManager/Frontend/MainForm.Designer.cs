@@ -36,6 +36,7 @@ namespace PharmacyManager
             this.btnReports = new System.Windows.Forms.Button();
             this.btnLogout = new System.Windows.Forms.Button();
             this.panelContent = new System.Windows.Forms.Panel();
+            this.panelSidebar.SuspendLayout();
             this.SuspendLayout();
             // 
             // panelSidebar
@@ -48,7 +49,7 @@ namespace PharmacyManager
             this.panelSidebar.Dock = System.Windows.Forms.DockStyle.Left;
             this.panelSidebar.Location = new System.Drawing.Point(0, 0);
             this.panelSidebar.Name = "panelSidebar";
-            this.panelSidebar.Size = new System.Drawing.Size(150, 100);
+            this.panelSidebar.Size = new System.Drawing.Size(150, 527);
             this.panelSidebar.TabIndex = 1;
             // 
             // btnInventory
@@ -84,7 +85,7 @@ namespace PharmacyManager
             // btnLogout
             // 
             this.btnLogout.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.btnLogout.Location = new System.Drawing.Point(0, 77);
+            this.btnLogout.Location = new System.Drawing.Point(0, 504);
             this.btnLogout.Name = "btnLogout";
             this.btnLogout.Size = new System.Drawing.Size(150, 23);
             this.btnLogout.TabIndex = 3;
@@ -94,19 +95,20 @@ namespace PharmacyManager
             // panelContent
             // 
             this.panelContent.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelContent.Location = new System.Drawing.Point(150, 0); // Start after sidebar
+            this.panelContent.Location = new System.Drawing.Point(150, 0);
             this.panelContent.Name = "panelContent";
-            this.panelContent.Size = new System.Drawing.Size(200, 100);
+            this.panelContent.Size = new System.Drawing.Size(735, 527);
             this.panelContent.TabIndex = 0;
             // 
             // MainForm
             // 
-            this.ClientSize = new System.Drawing.Size(278, 244);
+            this.ClientSize = new System.Drawing.Size(885, 527);
             this.Controls.Add(this.panelContent);
             this.Controls.Add(this.panelSidebar);
             this.Name = "MainForm";
             this.Text = "Pharmacy Manager";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.MainForm_FormClosed);
             this.panelSidebar.ResumeLayout(false);
             this.ResumeLayout(false);
 

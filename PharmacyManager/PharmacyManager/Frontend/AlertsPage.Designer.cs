@@ -32,7 +32,9 @@
             this.columnHeaderType = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeaderName = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeaderId = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.button1 = new System.Windows.Forms.Button();
+            this.alertsMarkAsRead = new System.Windows.Forms.Button();
+            this.showAcknowledgedAlerts = new System.Windows.Forms.CheckBox();
+            this.unacknowledgeButton = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // listViewAlerts
@@ -43,9 +45,10 @@
             this.columnHeaderId});
             this.listViewAlerts.FullRowSelect = true;
             this.listViewAlerts.HideSelection = false;
-            this.listViewAlerts.Location = new System.Drawing.Point(15, 22);
+            this.listViewAlerts.Location = new System.Drawing.Point(10, 14);
+            this.listViewAlerts.Margin = new System.Windows.Forms.Padding(2);
             this.listViewAlerts.Name = "listViewAlerts";
-            this.listViewAlerts.Size = new System.Drawing.Size(600, 135);
+            this.listViewAlerts.Size = new System.Drawing.Size(842, 334);
             this.listViewAlerts.TabIndex = 1;
             this.listViewAlerts.UseCompatibleStateImageBehavior = false;
             this.listViewAlerts.View = System.Windows.Forms.View.Details;
@@ -67,25 +70,53 @@
             this.columnHeaderId.Text = "Drug Id";
             this.columnHeaderId.Width = 189;
             // 
-            // button1
+            // alertsMarkAsRead
             // 
-            this.button1.Location = new System.Drawing.Point(15, 163);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(80, 36);
-            this.button1.TabIndex = 2;
-            this.button1.Text = "Test";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.alertsMarkAsRead.Location = new System.Drawing.Point(600, 363);
+            this.alertsMarkAsRead.Margin = new System.Windows.Forms.Padding(2);
+            this.alertsMarkAsRead.Name = "alertsMarkAsRead";
+            this.alertsMarkAsRead.Size = new System.Drawing.Size(116, 23);
+            this.alertsMarkAsRead.TabIndex = 2;
+            this.alertsMarkAsRead.Text = "Acknowledge Alert";
+            this.alertsMarkAsRead.UseVisualStyleBackColor = true;
+            this.alertsMarkAsRead.Click += new System.EventHandler(this.acknowledgeAlertButton_Click);
+            // 
+            // showAcknowledgedAlerts
+            // 
+            this.showAcknowledgedAlerts.AutoSize = true;
+            this.showAcknowledgedAlerts.Location = new System.Drawing.Point(10, 353);
+            this.showAcknowledgedAlerts.Name = "showAcknowledgedAlerts";
+            this.showAcknowledgedAlerts.Size = new System.Drawing.Size(162, 17);
+            this.showAcknowledgedAlerts.TabIndex = 3;
+            this.showAcknowledgedAlerts.Text = "Show Acknowledged Alerts?";
+            this.showAcknowledgedAlerts.UseVisualStyleBackColor = true;
+            this.showAcknowledgedAlerts.CheckedChanged += new System.EventHandler(this.showAcknowledgedAlerts_CheckedChanged);
+            // 
+            // unacknowledgeButton
+            // 
+            this.unacknowledgeButton.Location = new System.Drawing.Point(720, 363);
+            this.unacknowledgeButton.Margin = new System.Windows.Forms.Padding(2);
+            this.unacknowledgeButton.Name = "unacknowledgeButton";
+            this.unacknowledgeButton.Size = new System.Drawing.Size(133, 23);
+            this.unacknowledgeButton.TabIndex = 4;
+            this.unacknowledgeButton.Text = "Unacknowledge Alert";
+            this.unacknowledgeButton.UseVisualStyleBackColor = true;
+            this.unacknowledgeButton.Click += new System.EventHandler(this.unacknowledgeButton_Click);
             // 
             // AlertsPage
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.unacknowledgeButton);
+            this.Controls.Add(this.showAcknowledgedAlerts);
+            this.Controls.Add(this.alertsMarkAsRead);
             this.Controls.Add(this.listViewAlerts);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "AlertsPage";
-            this.Size = new System.Drawing.Size(664, 553);
+            this.Size = new System.Drawing.Size(890, 398);
+            this.Load += new System.EventHandler(this.AlertsPage_Load);
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -94,6 +125,8 @@
         private System.Windows.Forms.ColumnHeader columnHeaderType;
         private System.Windows.Forms.ColumnHeader columnHeaderId;
         private System.Windows.Forms.ColumnHeader columnHeaderName;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button alertsMarkAsRead;
+        private System.Windows.Forms.CheckBox showAcknowledgedAlerts;
+        private System.Windows.Forms.Button unacknowledgeButton;
     }
 }

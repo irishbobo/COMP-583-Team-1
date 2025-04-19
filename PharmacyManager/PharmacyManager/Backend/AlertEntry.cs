@@ -11,21 +11,21 @@ namespace PharmacyManager.Backend
     }
     class AlertEntry : IDatabaseParesable
     {
-        public int alertID;
-        public int drugID;
-        public AlertType alertType;
-        public DateTime alertTime;
-        public bool acknowledged;
+        public int AlertID { get; set; }
+        public int DrugID { get; set; }
+        public AlertType AlertType { get; set; }
+        public DateTime AlertTime { get; set; }
+        public bool Acknowledged { get; set; }
 
         public void ParseFromReader(SqlDataReader reader)
         {
-            alertID = reader.GetInt32(0);
-            drugID = reader.GetInt32(1);
-            alertType = (reader.GetString(2) == "DrugExpiration")
+            AlertID = reader.GetInt32(0);
+            DrugID = reader.GetInt32(1);
+            AlertType = (reader.GetString(2) == "DrugExpiration")
                             ? AlertType.DrugExpiration
                             : AlertType.LowStock;
-            alertTime = reader.GetDateTime(3);
-            acknowledged = reader.GetBoolean(4);
+            AlertTime = reader.GetDateTime(3);
+            Acknowledged = reader.GetBoolean(4);
         }
     }
 }

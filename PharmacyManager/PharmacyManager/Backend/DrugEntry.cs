@@ -4,19 +4,19 @@ using System.Data.SqlClient;
 
 namespace PharmacyManager.Backend
 {
-    class DrugEntry : IDatabaseParesable
+    struct DrugEntry : IDatabaseParesable
     {
-        public int drugID;
-        public string name;
-        public DateTime expirationDate;
-        public int amount;
+        public int DrugID { get; set; }
+        public string Name { get; set; }
+        public DateTime ExpirationDate { get; set; }
+        public int Amount { get; set; }
 
         public void ParseFromReader(SqlDataReader reader)
         {
-            drugID = reader.GetInt32(0);
-            name = reader.GetString(1);
-            expirationDate = reader.GetDateTime(2);
-            amount = reader.GetInt32(3);
+            DrugID = reader.GetInt32(0);
+            Name = reader.GetString(1);
+            ExpirationDate = reader.GetDateTime(2);
+            Amount = reader.GetInt32(3);
         }
     }
 }

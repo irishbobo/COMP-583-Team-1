@@ -33,12 +33,21 @@ namespace PharmacyManager
             LoadPage(new ReportsPage());
         }
 
-        private void btnLogout_Click(object sender, EventArgs e)
+        private void SignOut()
         {
             // Optional: Navigate back to login
             LogInForm login = new LogInForm();
             login.Show();
+        }
+
+        private void btnLogout_Click(object sender, EventArgs e)
+        {
             this.Close();
+        }
+
+        private void MainForm_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            SignOut();
         }
     }
 }

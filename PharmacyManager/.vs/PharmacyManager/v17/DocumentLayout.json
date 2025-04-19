@@ -1,10 +1,50 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\tgood\\Desktop\\Work\\COMP-583-Team-1\\PharmacyManager\\",
+  "WorkspaceRootPath": "D:\\Users\\Tanner\\Desktop\\Work\\Programming\\COMP-583-Team-1\\PharmacyManager\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{9274B19C-55B9-4868-93A8-8B8548AAB487}|PharmacyManager\\PharmacyManager.csproj|c:\\users\\tgood\\desktop\\work\\comp-583-team-1\\pharmacymanager\\pharmacymanager\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{9274B19C-55B9-4868-93A8-8B8548AAB487}|PharmacyManager\\PharmacyManager.csproj|d:\\users\\tanner\\desktop\\work\\programming\\comp-583-team-1\\pharmacymanager\\pharmacymanager\\frontend\\mainform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{9274B19C-55B9-4868-93A8-8B8548AAB487}|PharmacyManager\\PharmacyManager.csproj|solutionrelative:pharmacymanager\\frontend\\mainform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9274B19C-55B9-4868-93A8-8B8548AAB487}|PharmacyManager\\PharmacyManager.csproj|D:\\Users\\Tanner\\Desktop\\Work\\Programming\\COMP-583-Team-1\\PharmacyManager\\pharmacymanager\\frontend\\alertspage.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{9274B19C-55B9-4868-93A8-8B8548AAB487}|PharmacyManager\\PharmacyManager.csproj|solutionrelative:pharmacymanager\\frontend\\alertspage.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9274B19C-55B9-4868-93A8-8B8548AAB487}|PharmacyManager\\PharmacyManager.csproj|d:\\users\\tanner\\desktop\\work\\programming\\comp-583-team-1\\pharmacymanager\\pharmacymanager\\frontend\\loginform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9274B19C-55B9-4868-93A8-8B8548AAB487}|PharmacyManager\\PharmacyManager.csproj|solutionrelative:pharmacymanager\\frontend\\loginform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9274B19C-55B9-4868-93A8-8B8548AAB487}|PharmacyManager\\PharmacyManager.csproj|D:\\Users\\Tanner\\Desktop\\Work\\Programming\\COMP-583-Team-1\\PharmacyManager\\pharmacymanager\\frontend\\mainform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9274B19C-55B9-4868-93A8-8B8548AAB487}|PharmacyManager\\PharmacyManager.csproj|solutionrelative:pharmacymanager\\frontend\\mainform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9274B19C-55B9-4868-93A8-8B8548AAB487}|PharmacyManager\\PharmacyManager.csproj|D:\\Users\\Tanner\\Desktop\\Work\\Programming\\COMP-583-Team-1\\PharmacyManager\\pharmacymanager\\frontend\\loginform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{9274B19C-55B9-4868-93A8-8B8548AAB487}|PharmacyManager\\PharmacyManager.csproj|solutionrelative:pharmacymanager\\frontend\\loginform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9274B19C-55B9-4868-93A8-8B8548AAB487}|PharmacyManager\\PharmacyManager.csproj|D:\\Users\\Tanner\\Desktop\\Work\\Programming\\COMP-583-Team-1\\PharmacyManager\\pharmacymanager\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{9274B19C-55B9-4868-93A8-8B8548AAB487}|PharmacyManager\\PharmacyManager.csproj|solutionrelative:pharmacymanager\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9274B19C-55B9-4868-93A8-8B8548AAB487}|PharmacyManager\\PharmacyManager.csproj|D:\\Users\\Tanner\\Desktop\\Work\\Programming\\COMP-583-Team-1\\PharmacyManager\\pharmacymanager\\frontend\\invenorypage.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9274B19C-55B9-4868-93A8-8B8548AAB487}|PharmacyManager\\PharmacyManager.csproj|solutionrelative:pharmacymanager\\frontend\\invenorypage.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9274B19C-55B9-4868-93A8-8B8548AAB487}|PharmacyManager\\PharmacyManager.csproj|D:\\Users\\Tanner\\Desktop\\Work\\Programming\\COMP-583-Team-1\\PharmacyManager\\pharmacymanager\\backend\\alertentry.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9274B19C-55B9-4868-93A8-8B8548AAB487}|PharmacyManager\\PharmacyManager.csproj|solutionrelative:pharmacymanager\\backend\\alertentry.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9274B19C-55B9-4868-93A8-8B8548AAB487}|PharmacyManager\\PharmacyManager.csproj|D:\\Users\\Tanner\\Desktop\\Work\\Programming\\COMP-583-Team-1\\PharmacyManager\\pharmacymanager\\frontend\\alertspage.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9274B19C-55B9-4868-93A8-8B8548AAB487}|PharmacyManager\\PharmacyManager.csproj|solutionrelative:pharmacymanager\\frontend\\alertspage.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9274B19C-55B9-4868-93A8-8B8548AAB487}|PharmacyManager\\PharmacyManager.csproj|D:\\Users\\Tanner\\Desktop\\Work\\Programming\\COMP-583-Team-1\\PharmacyManager\\pharmacymanager\\backend\\databasemanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9274B19C-55B9-4868-93A8-8B8548AAB487}|PharmacyManager\\PharmacyManager.csproj|solutionrelative:pharmacymanager\\backend\\databasemanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9274B19C-55B9-4868-93A8-8B8548AAB487}|PharmacyManager\\PharmacyManager.csproj|D:\\Users\\Tanner\\Desktop\\Work\\Programming\\COMP-583-Team-1\\PharmacyManager\\pharmacymanager\\backend\\drugentry.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9274B19C-55B9-4868-93A8-8B8548AAB487}|PharmacyManager\\PharmacyManager.csproj|solutionrelative:pharmacymanager\\backend\\drugentry.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -33,14 +73,141 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
+              "Title": "MainForm.cs [Design]",
+              "DocumentMoniker": "D:\\Users\\Tanner\\Desktop\\Work\\Programming\\COMP-583-Team-1\\PharmacyManager\\PharmacyManager\\Frontend\\MainForm.cs",
+              "RelativeDocumentMoniker": "PharmacyManager\\Frontend\\MainForm.cs",
+              "ToolTip": "D:\\Users\\Tanner\\Desktop\\Work\\Programming\\COMP-583-Team-1\\PharmacyManager\\PharmacyManager\\Frontend\\MainForm.cs [Design]",
+              "RelativeToolTip": "PharmacyManager\\Frontend\\MainForm.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-19T04:52:22.517Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "LogInForm.cs",
+              "DocumentMoniker": "D:\\Users\\Tanner\\Desktop\\Work\\Programming\\COMP-583-Team-1\\PharmacyManager\\PharmacyManager\\Frontend\\LogInForm.cs",
+              "RelativeDocumentMoniker": "PharmacyManager\\Frontend\\LogInForm.cs",
+              "ToolTip": "D:\\Users\\Tanner\\Desktop\\Work\\Programming\\COMP-583-Team-1\\PharmacyManager\\PharmacyManager\\Frontend\\LogInForm.cs",
+              "RelativeToolTip": "PharmacyManager\\Frontend\\LogInForm.cs",
+              "ViewState": "AQIAAAsAAAAAAAAAAAAjwCcAAAANAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-19T04:44:59.976Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "LogInForm.cs [Design]",
+              "DocumentMoniker": "D:\\Users\\Tanner\\Desktop\\Work\\Programming\\COMP-583-Team-1\\PharmacyManager\\PharmacyManager\\Frontend\\LogInForm.cs",
+              "RelativeDocumentMoniker": "PharmacyManager\\Frontend\\LogInForm.cs",
+              "ToolTip": "D:\\Users\\Tanner\\Desktop\\Work\\Programming\\COMP-583-Team-1\\PharmacyManager\\PharmacyManager\\Frontend\\LogInForm.cs [Design]",
+              "RelativeToolTip": "PharmacyManager\\Frontend\\LogInForm.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-19T04:44:53.771Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "MainForm.cs",
+              "DocumentMoniker": "D:\\Users\\Tanner\\Desktop\\Work\\Programming\\COMP-583-Team-1\\PharmacyManager\\PharmacyManager\\Frontend\\MainForm.cs",
+              "RelativeDocumentMoniker": "PharmacyManager\\Frontend\\MainForm.cs",
+              "ToolTip": "D:\\Users\\Tanner\\Desktop\\Work\\Programming\\COMP-583-Team-1\\PharmacyManager\\PharmacyManager\\Frontend\\MainForm.cs",
+              "RelativeToolTip": "PharmacyManager\\Frontend\\MainForm.cs",
+              "ViewState": "AQIAAB0AAAAAAAAAAAAWwCIAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-19T04:43:12.275Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "DatabaseManager.cs",
+              "DocumentMoniker": "D:\\Users\\Tanner\\Desktop\\Work\\Programming\\COMP-583-Team-1\\PharmacyManager\\PharmacyManager\\Backend\\DatabaseManager.cs",
+              "RelativeDocumentMoniker": "PharmacyManager\\Backend\\DatabaseManager.cs",
+              "ToolTip": "D:\\Users\\Tanner\\Desktop\\Work\\Programming\\COMP-583-Team-1\\PharmacyManager\\PharmacyManager\\Backend\\DatabaseManager.cs",
+              "RelativeToolTip": "PharmacyManager\\Backend\\DatabaseManager.cs",
+              "ViewState": "AQIAADMAAAAAAAAAAADwv6QAAAAQAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-19T04:32:45.705Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "AlertEntry.cs",
+              "DocumentMoniker": "D:\\Users\\Tanner\\Desktop\\Work\\Programming\\COMP-583-Team-1\\PharmacyManager\\PharmacyManager\\Backend\\AlertEntry.cs",
+              "RelativeDocumentMoniker": "PharmacyManager\\Backend\\AlertEntry.cs",
+              "ToolTip": "D:\\Users\\Tanner\\Desktop\\Work\\Programming\\COMP-583-Team-1\\PharmacyManager\\PharmacyManager\\Backend\\AlertEntry.cs",
+              "RelativeToolTip": "PharmacyManager\\Backend\\AlertEntry.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABkAAAAoAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-19T04:15:26.913Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "AlertsPage.cs",
+              "DocumentMoniker": "D:\\Users\\Tanner\\Desktop\\Work\\Programming\\COMP-583-Team-1\\PharmacyManager\\PharmacyManager\\Frontend\\AlertsPage.cs",
+              "RelativeDocumentMoniker": "PharmacyManager\\Frontend\\AlertsPage.cs",
+              "ToolTip": "D:\\Users\\Tanner\\Desktop\\Work\\Programming\\COMP-583-Team-1\\PharmacyManager\\PharmacyManager\\Frontend\\AlertsPage.cs",
+              "RelativeToolTip": "PharmacyManager\\Frontend\\AlertsPage.cs",
+              "ViewState": "AQIAAFcAAAAAAAAAAAAUwHIAAAA9AAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-19T04:13:30.668Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "AlertsPage.cs [Design]",
+              "DocumentMoniker": "D:\\Users\\Tanner\\Desktop\\Work\\Programming\\COMP-583-Team-1\\PharmacyManager\\PharmacyManager\\Frontend\\AlertsPage.cs",
+              "RelativeDocumentMoniker": "PharmacyManager\\Frontend\\AlertsPage.cs",
+              "ToolTip": "D:\\Users\\Tanner\\Desktop\\Work\\Programming\\COMP-583-Team-1\\PharmacyManager\\PharmacyManager\\Frontend\\AlertsPage.cs [Design]",
+              "RelativeToolTip": "PharmacyManager\\Frontend\\AlertsPage.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-19T04:11:43.692Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "DrugEntry.cs",
+              "DocumentMoniker": "D:\\Users\\Tanner\\Desktop\\Work\\Programming\\COMP-583-Team-1\\PharmacyManager\\PharmacyManager\\Backend\\DrugEntry.cs",
+              "RelativeDocumentMoniker": "PharmacyManager\\Backend\\DrugEntry.cs",
+              "ToolTip": "D:\\Users\\Tanner\\Desktop\\Work\\Programming\\COMP-583-Team-1\\PharmacyManager\\PharmacyManager\\Backend\\DrugEntry.cs",
+              "RelativeToolTip": "PharmacyManager\\Backend\\DrugEntry.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABEAAAAzAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-19T03:48:13.621Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
               "Title": "Program.cs",
-              "DocumentMoniker": "C:\\Users\\tgood\\Desktop\\Work\\COMP-583-Team-1\\PharmacyManager\\PharmacyManager\\Program.cs",
+              "DocumentMoniker": "D:\\Users\\Tanner\\Desktop\\Work\\Programming\\COMP-583-Team-1\\PharmacyManager\\PharmacyManager\\Program.cs",
               "RelativeDocumentMoniker": "PharmacyManager\\Program.cs",
-              "ToolTip": "C:\\Users\\tgood\\Desktop\\Work\\COMP-583-Team-1\\PharmacyManager\\PharmacyManager\\Program.cs",
+              "ToolTip": "D:\\Users\\Tanner\\Desktop\\Work\\Programming\\COMP-583-Team-1\\PharmacyManager\\PharmacyManager\\Program.cs",
               "RelativeToolTip": "PharmacyManager\\Program.cs",
-              "ViewState": "AgIAAAIAAAAAAAAAAAAAAAIAAAAhAAAAAAAAAA==",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAIwB4AAAACAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-04-09T07:49:00.398Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "InvenoryPage.cs",
+              "DocumentMoniker": "D:\\Users\\Tanner\\Desktop\\Work\\Programming\\COMP-583-Team-1\\PharmacyManager\\PharmacyManager\\Frontend\\InvenoryPage.cs",
+              "RelativeDocumentMoniker": "PharmacyManager\\Frontend\\InvenoryPage.cs",
+              "ToolTip": "D:\\Users\\Tanner\\Desktop\\Work\\Programming\\COMP-583-Team-1\\PharmacyManager\\PharmacyManager\\Frontend\\InvenoryPage.cs",
+              "RelativeToolTip": "PharmacyManager\\Frontend\\InvenoryPage.cs",
+              "ViewState": "AQIAAHoAAAAAAAAAAAD4v0cAAAAhAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-19T03:26:51.24Z",
               "EditorCaption": ""
             }
           ]

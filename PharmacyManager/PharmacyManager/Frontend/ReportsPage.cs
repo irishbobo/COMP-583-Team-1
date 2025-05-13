@@ -130,6 +130,12 @@ namespace PharmacyManager
         {
             listViewReports.Items.Clear();
 
+            if (entries.Count == 0)
+            {
+                MessageBox.Show("No history records found for this Drug ID and date range.", "No Results", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+            }
+
             foreach (var entry in entries)
             {
                 ListViewItem item = new ListViewItem(entry.historyTime.ToString("g"));
@@ -139,5 +145,6 @@ namespace PharmacyManager
                 listViewReports.Items.Add(item);
             }
         }
+
     }
 }

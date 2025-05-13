@@ -2,17 +2,16 @@
 using System;
 using System.Collections.Generic;
 using System.Data.SqlClient;
-using System.Drawing;
 using System.Windows.Forms;
 
 namespace PharmacyManager
 {
     public partial class ReportsPage : UserControl
     {
-        private TextBox txtDrugID;
+        private DataGridView dataGridViewReports;
         private DateTimePicker startDatePicker, endDatePicker;
-        private Button btnGenerate;
-        private ListView listViewReports;
+        private NumericUpDown drugIdFilter;
+        private Button filterButton;
 
         private const string CONNECTION_STRING = @"Server=(localdb)\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\Database1.mdf;Integrated Security=true";
 
@@ -24,72 +23,61 @@ namespace PharmacyManager
 
         private void InitializeReportsUI()
         {
-            txtDrugID = new TextBox { Top = 10, Left = 10, Width = 100 };
-            txtDrugID.Text = "Drug ID";
-            txtDrugID.ForeColor = Color.Gray;
+            Label lblDrugId = new Label { Text = "Drug ID:", Top = 10, Left = 10 };
+            drugIdFilter = new NumericUpDown { Top = 10, Left = 70, Width = 100, Minimum = 0, Maximum = int.MaxValue };
 
-            txtDrugID.GotFocus += (s, e) =>
-            {
-                if (txtDrugID.Text == "Drug ID")
-                {
-                    txtDrugID.Text = "";
-                    txtDrugID.ForeColor = Color.Black;
-                }
-            };
+            Label lblStart = new Label { Text = "Start Date:", Top = 10, Left = 180 };
+            startDatePicker = new DateTimePicker { Top = 10, Left = 260, Width = 150 };
 
-            txtDrugID.LostFocus += (s, e) =>
-            {
-                if (string.IsNullOrWhiteSpace(txtDrugID.Text))
-                {
-                    txtDrugID.Text = "Drug ID";
-                    txtDrugID.ForeColor = Color.Gray;
-                }
-            };
+            Label lblEnd = new Label { Text = "End Date:", Top = 10, Left = 420 };
+            endDatePicker = new DateTimePicker { Top = 10, Left = 500, Width = 150 };
 
-            startDatePicker = new DateTimePicker { Top = 10, Left = 120, Width = 150 };
-            endDatePicker = new DateTimePicker { Top = 10, Left = 280, Width = 150 };
-            btnGenerate = new Button { Text = "Generate", Top = 10, Left = 440, Width = 100 };
-            btnGenerate.Click += BtnGenerate_Click;
+            filterButton = new Button { Text = "Filter", Top = 10, Left = 660, Width = 80 };
+            filterButton.Click += FilterButton_Click;
 
-            listViewReports = new ListView
+            dataGridViewReports = new DataGridView
             {
                 Top = 50,
                 Left = 10,
-                Width = 750,
+                Width = 800,
                 Height = 400,
-                View = View.Details,
-                FullRowSelect = true,
-                GridLines = true
+                AutoGenerateColumns = true
             };
 
-            listViewReports.Columns.Add("Time", 150);
-            listViewReports.Columns.Add("Drug ID", 100);
-            listViewReports.Columns.Add("Before", 100);
-            listViewReports.Columns.Add("After", 100);
-
-            this.Controls.Add(txtDrugID);
+            this.Controls.Add(lblDrugId);
+            this.Controls.Add(drugIdFilter);
+            this.Controls.Add(lblStart);
             this.Controls.Add(startDatePicker);
+            this.Controls.Add(lblEnd);
             this.Controls.Add(endDatePicker);
-            this.Controls.Add(btnGenerate);
-            this.Controls.Add(listViewReports);
+            this.Controls.Add(filterButton);
+            this.Controls.Add(dataGridViewReports);
+
+            LoadAllHistory();
         }
 
-        private void BtnGenerate_Click(object sender, EventArgs e)
+        private void LoadAllHistory()
         {
-            if (!int.TryParse(txtDrugID.Text.Trim(), out int drugID))
-            {
-                MessageBox.Show("Please enter a valid numeric Drug ID.", "Input Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                return;
-            }
+            // Use a valid SQL datetime range
+            DateTime start = new DateTime(1753, 1, 1);
+            DateTime end = DateTime.Now;
 
-            DateTime start = startDatePicker.Value;
-            DateTime end = endDatePicker.Value;
-
-            List<HistoryEntry> entries = GetHistoryByDrugID(drugID, start, end);
-            DisplayHistory(entries);
+            List<HistoryEntry> entries = GetHistoryEntries(null, start, end);
+            dataGridViewReports.DataSource = entries;
         }
 
-        private List<HistoryEntry> GetHistoryByDrugID(int drugID, DateTime start, DateTime end)
+
+        private void FilterButton_Click(object sender, EventArgs e)
+        {
+            int? drugID = drugIdFilter.Value > 0 ? (int?)drugIdFilter.Value : null;
+            DateTime start = startDatePicker.Value.Date;
+            DateTime end = endDatePicker.Value.Date.AddDays(1).AddSeconds(-1);
+
+            List<HistoryEntry> entries = GetHistoryEntries(drugID, start, end);
+            dataGridViewReports.DataSource = entries;
+        }
+
+        private List<HistoryEntry> GetHistoryEntries(int? drugID, DateTime start, DateTime end)
         {
             List<HistoryEntry> results = new List<HistoryEntry>();
 
@@ -99,13 +87,13 @@ namespace PharmacyManager
 
                 string query = @"
                     SELECT * FROM dbo.History
-                    WHERE drugID = @drugID
+                    WHERE (@drugID IS NULL OR drugID = @drugID)
                       AND historyTime BETWEEN @start AND @end
-                    ORDER BY historyTime DESC;";
+                    ORDER BY historyTime DESC";
 
                 using (SqlCommand command = new SqlCommand(query, connection))
                 {
-                    command.Parameters.AddWithValue("@drugID", drugID);
+                    command.Parameters.AddWithValue("@drugID", (object)drugID ?? DBNull.Value);
                     command.Parameters.AddWithValue("@start", start);
                     command.Parameters.AddWithValue("@end", end);
 
@@ -125,26 +113,5 @@ namespace PharmacyManager
 
             return results;
         }
-
-        private void DisplayHistory(List<HistoryEntry> entries)
-        {
-            listViewReports.Items.Clear();
-
-            if (entries.Count == 0)
-            {
-                MessageBox.Show("No history records found for this Drug ID and date range.", "No Results", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                return;
-            }
-
-            foreach (var entry in entries)
-            {
-                ListViewItem item = new ListViewItem(entry.historyTime.ToString("g"));
-                item.SubItems.Add(entry.drugID.ToString());
-                item.SubItems.Add(entry.beforeAmount.ToString());
-                item.SubItems.Add(entry.afterAmount.ToString());
-                listViewReports.Items.Add(item);
-            }
-        }
-
     }
 }

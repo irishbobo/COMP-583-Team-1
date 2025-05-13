@@ -45,3 +45,4 @@ D:\Users\Tanner\Desktop\Work\Programming\COMP-583-Team-1\PharmacyManager\Pharmac
 D:\Users\Tanner\Desktop\Work\Programming\COMP-583-Team-1\PharmacyManager\PharmacyManager\obj\Debug\PharmacyManager.exe
 D:\Users\Tanner\Desktop\Work\Programming\COMP-583-Team-1\PharmacyManager\PharmacyManager\obj\Debug\PharmacyManager.pdb
 D:\Users\Tanner\Desktop\Work\Programming\COMP-583-Team-1\PharmacyManager\PharmacyManager\bin\Debug\PharmacyManager.pdb
+C:\Users\irish\Documents\COMP583\COMP-583-Team-1\PharmacyManager\PharmacyManager\obj\Debug\PharmacyManager.ReportsPage.resources

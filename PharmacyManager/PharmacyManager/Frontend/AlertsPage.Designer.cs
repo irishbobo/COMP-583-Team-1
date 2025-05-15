@@ -35,6 +35,10 @@
             this.alertsMarkAsRead = new System.Windows.Forms.Button();
             this.showAcknowledgedAlerts = new System.Windows.Forms.CheckBox();
             this.unacknowledgeButton = new System.Windows.Forms.Button();
+            this.AlertsAlertGroupBox = new System.Windows.Forms.GroupBox();
+            this.AlertsControlsGroupBox = new System.Windows.Forms.GroupBox();
+            this.AlertsAlertGroupBox.SuspendLayout();
+            this.AlertsControlsGroupBox.SuspendLayout();
             this.SuspendLayout();
             // 
             // listViewAlerts
@@ -43,12 +47,13 @@
             this.columnHeaderType,
             this.columnHeaderName,
             this.columnHeaderId});
+            this.listViewAlerts.Dock = System.Windows.Forms.DockStyle.Fill;
             this.listViewAlerts.FullRowSelect = true;
             this.listViewAlerts.HideSelection = false;
-            this.listViewAlerts.Location = new System.Drawing.Point(10, 14);
+            this.listViewAlerts.Location = new System.Drawing.Point(3, 16);
             this.listViewAlerts.Margin = new System.Windows.Forms.Padding(2);
             this.listViewAlerts.Name = "listViewAlerts";
-            this.listViewAlerts.Size = new System.Drawing.Size(842, 334);
+            this.listViewAlerts.Size = new System.Drawing.Size(808, 320);
             this.listViewAlerts.TabIndex = 1;
             this.listViewAlerts.UseCompatibleStateImageBehavior = false;
             this.listViewAlerts.View = System.Windows.Forms.View.Details;
@@ -72,7 +77,8 @@
             // 
             // alertsMarkAsRead
             // 
-            this.alertsMarkAsRead.Location = new System.Drawing.Point(600, 363);
+            this.alertsMarkAsRead.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.alertsMarkAsRead.Location = new System.Drawing.Point(556, 12);
             this.alertsMarkAsRead.Margin = new System.Windows.Forms.Padding(2);
             this.alertsMarkAsRead.Name = "alertsMarkAsRead";
             this.alertsMarkAsRead.Size = new System.Drawing.Size(116, 23);
@@ -84,7 +90,7 @@
             // showAcknowledgedAlerts
             // 
             this.showAcknowledgedAlerts.AutoSize = true;
-            this.showAcknowledgedAlerts.Location = new System.Drawing.Point(10, 353);
+            this.showAcknowledgedAlerts.Location = new System.Drawing.Point(6, 18);
             this.showAcknowledgedAlerts.Name = "showAcknowledgedAlerts";
             this.showAcknowledgedAlerts.Size = new System.Drawing.Size(162, 17);
             this.showAcknowledgedAlerts.TabIndex = 3;
@@ -94,7 +100,8 @@
             // 
             // unacknowledgeButton
             // 
-            this.unacknowledgeButton.Location = new System.Drawing.Point(720, 363);
+            this.unacknowledgeButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.unacknowledgeButton.Location = new System.Drawing.Point(676, 12);
             this.unacknowledgeButton.Margin = new System.Windows.Forms.Padding(2);
             this.unacknowledgeButton.Name = "unacknowledgeButton";
             this.unacknowledgeButton.Size = new System.Drawing.Size(133, 23);
@@ -103,20 +110,44 @@
             this.unacknowledgeButton.UseVisualStyleBackColor = true;
             this.unacknowledgeButton.Click += new System.EventHandler(this.unacknowledgeButton_Click);
             // 
+            // AlertsAlertGroupBox
+            // 
+            this.AlertsAlertGroupBox.Controls.Add(this.listViewAlerts);
+            this.AlertsAlertGroupBox.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.AlertsAlertGroupBox.Location = new System.Drawing.Point(0, 0);
+            this.AlertsAlertGroupBox.Name = "AlertsAlertGroupBox";
+            this.AlertsAlertGroupBox.Size = new System.Drawing.Size(814, 339);
+            this.AlertsAlertGroupBox.TabIndex = 5;
+            this.AlertsAlertGroupBox.TabStop = false;
+            this.AlertsAlertGroupBox.Text = "Alerts";
+            // 
+            // AlertsControlsGroupBox
+            // 
+            this.AlertsControlsGroupBox.Controls.Add(this.showAcknowledgedAlerts);
+            this.AlertsControlsGroupBox.Controls.Add(this.alertsMarkAsRead);
+            this.AlertsControlsGroupBox.Controls.Add(this.unacknowledgeButton);
+            this.AlertsControlsGroupBox.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.AlertsControlsGroupBox.Location = new System.Drawing.Point(0, 339);
+            this.AlertsControlsGroupBox.Name = "AlertsControlsGroupBox";
+            this.AlertsControlsGroupBox.Size = new System.Drawing.Size(814, 40);
+            this.AlertsControlsGroupBox.TabIndex = 6;
+            this.AlertsControlsGroupBox.TabStop = false;
+            this.AlertsControlsGroupBox.Text = "Controls";
+            // 
             // AlertsPage
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.unacknowledgeButton);
-            this.Controls.Add(this.showAcknowledgedAlerts);
-            this.Controls.Add(this.alertsMarkAsRead);
-            this.Controls.Add(this.listViewAlerts);
+            this.Controls.Add(this.AlertsAlertGroupBox);
+            this.Controls.Add(this.AlertsControlsGroupBox);
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "AlertsPage";
-            this.Size = new System.Drawing.Size(890, 398);
+            this.Size = new System.Drawing.Size(814, 379);
             this.Load += new System.EventHandler(this.AlertsPage_Load);
+            this.AlertsAlertGroupBox.ResumeLayout(false);
+            this.AlertsControlsGroupBox.ResumeLayout(false);
+            this.AlertsControlsGroupBox.PerformLayout();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -128,5 +159,7 @@
         private System.Windows.Forms.Button alertsMarkAsRead;
         private System.Windows.Forms.CheckBox showAcknowledgedAlerts;
         private System.Windows.Forms.Button unacknowledgeButton;
+        private System.Windows.Forms.GroupBox AlertsAlertGroupBox;
+        private System.Windows.Forms.GroupBox AlertsControlsGroupBox;
     }
 }

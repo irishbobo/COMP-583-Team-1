@@ -15,9 +15,9 @@ namespace PharmacyManager
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
-            string name = addDrugNameTextbox.Text;
-            DateTime expirationDate = addDrugExpDateDateTimePicker.Value;
-            int amount = (int)addDrugAmountNumericUpDown.Value;
+            string name = InventoryMedicationsAddNameTextbox.Text;
+            DateTime expirationDate = InventoryMedicationsAddExpDate.Value;
+            int amount = (int)InventoryMedicationsAddQtyNumeric.Value;
 
             if (string.IsNullOrWhiteSpace(name))
             {
@@ -43,6 +43,10 @@ namespace PharmacyManager
                     {
                         LogHistory(newDrugID, 0, amount);
                     }
+                    else
+                    {
+                        MessageBox.Show("Failed to retrieve the last inserted Drug ID.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
 
                     MessageBox.Show("Drug added successfully!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
@@ -59,86 +63,77 @@ namespace PharmacyManager
             UpdateDataGridView();
         }
 
-        private void btnRemove_Click(object sender, EventArgs e)
-        {
-            int drugID = (int)removeDrugNumericUpDown.Value;
-
-            DialogResult result = MessageBox.Show($"Are you sure you want to delete the drug with ID {drugID}?", "Confirm Deletion", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
-            if (result == DialogResult.Yes)
-            {
-                try
-                {
-                    int previousAmount = GetDrugAmount(drugID);
-
-                    // Log to history BEFORE deleting the drug
-                    LogHistory(drugID, previousAmount, 0);
-
-                    int rowsAffected = DatabaseManager.DeleteRow("Drug", "DrugID", drugID);
-
-                    if (rowsAffected > 0)
-                    {
-                        MessageBox.Show("Drug deleted successfully!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    }
-                    else
-                    {
-                        MessageBox.Show("No rows were deleted.", "Deletion Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                    }
-
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show($"Error deleting drug: {ex.Message}", "Database Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
-
-                UpdateDataGridView();
-            }
-        }
-
         private void UpdateDataGridView()
         {
             List<DrugEntry> drugs = DatabaseManager.GetRows<DrugEntry>("Drug", "DrugId", count: 10000);
-            dataGridView1.DataSource = drugs;
+            InventoryMedicationsListGridView.DataSource = drugs;
         }
 
         private void InventoryPage_Load(object sender, EventArgs e)
         {
-            dataGridView1.AutoGenerateColumns = true;
+            InventoryMedicationsListGridView.AutoGenerateColumns = true;
             UpdateDataGridView();
         }
 
         private void searchDrugButton_Click(object sender, EventArgs e)
         {
-            if (string.IsNullOrEmpty(searchDrugNameComboBox.Text))
+            // Check if the name box is checked & valid.
+            string selectedName = null;
+            if (InventorySearchDrugNameCheckBox.Checked 
+                && string.IsNullOrEmpty(InventorySearchDrugNameComboBox.Text) == false)
             {
-                UpdateDataGridView();
-                return;
+                selectedName = InventorySearchDrugNameComboBox.Text;
             }
 
-            string selectedName = searchDrugNameComboBox.Text;
-            List<DrugEntry> drugs = DatabaseManager.SearchDrugs(selectedName, 10000, DatabaseManager.SortOrder.ExpRecent);
-            dataGridView1.DataSource = drugs;
-            dataGridView1.Refresh();
+
+            // Check if the ID box is checked.
+            int? selectedID = null;
+            if (InventorySearchMedicationIDCheckBox.Checked)
+            {
+                selectedID = (int)InventorySearchMedicationIDNumeric.Value;
+            }
+
+            // Check if the expiration start-date box is checked.
+            DateTime? selectedStartExpDate = null;
+            if (InventorySearchExpirationStartCheckBox.Checked)
+            {
+                selectedStartExpDate = InventorySearchExpirationStartDate.Value;
+            }
+
+            // Check if the expiration end-date box is checked.
+            DateTime? selectedEndExpDate = null;
+            if (InventorySearchExpirationEndCheckBox.Checked)
+            {
+                selectedEndExpDate = InventorySearchExpirationEndDate.Value;
+            }
+
+            List<DrugEntry> drugs = DatabaseManager.SearchDrugs(25, DatabaseManager.SortOrder.ExpRecent, 
+                                                                selectedName, 
+                                                                selectedStartExpDate, selectedEndExpDate, 
+                                                                selectedID);
+            InventoryMedicationsListGridView.DataSource = drugs;
+            InventoryMedicationsListGridView.Refresh();
         }
 
         private void searchDrugNameComboBox_DropDown(object sender, EventArgs e)
         {
             List<string> uniqueNames = DatabaseManager.GetUniqueDrugNames();
-            string selectedName = searchDrugNameComboBox.Text;
+            string selectedName = InventorySearchDrugNameComboBox.Text;
 
-            searchDrugNameComboBox.Items.Clear();
-            searchDrugNameComboBox.Items.Add("");
+            InventorySearchDrugNameComboBox.Items.Clear();
+            InventorySearchDrugNameComboBox.Items.Add("");
             foreach (string name in uniqueNames)
             {
-                searchDrugNameComboBox.Items.Add(name);
+                InventorySearchDrugNameComboBox.Items.Add(name);
             }
 
             if (uniqueNames.Contains(selectedName))
             {
-                searchDrugNameComboBox.Text = selectedName;
+                InventorySearchDrugNameComboBox.Text = selectedName;
             }
             else
             {
-                searchDrugNameComboBox.Text = "";
+                InventorySearchDrugNameComboBox.Text = "";
             }
         }
 
@@ -187,6 +182,32 @@ namespace PharmacyManager
                     cmd.ExecuteNonQuery();
                 }
             }
+        }
+
+        private void InventorySearchResetButton_Click(object sender, EventArgs e)
+        {
+            // Reset each search field to its default state.
+
+            // Reset the drug name.
+            InventorySearchDrugNameCheckBox.Checked = false;
+            InventorySearchDrugNameComboBox.Text = "";
+
+            // Reset the medication ID.
+            InventorySearchMedicationIDCheckBox.Checked = false;
+            InventorySearchMedicationIDNumeric.Value = 0;
+
+            // Reset the expiration start-date.
+            InventorySearchExpirationStartCheckBox.Checked = false;
+            InventorySearchExpirationStartDate.Value = DateTime.Now;
+
+            // Reset the expiration end-date.
+            InventorySearchExpirationEndCheckBox.Checked = false;
+            InventorySearchExpirationEndDate.Value = DateTime.Now;
+
+            // Refresh the list.
+            List<DrugEntry> drugs = DatabaseManager.SearchDrugs(25, DatabaseManager.SortOrder.ExpRecent);
+            InventoryMedicationsListGridView.DataSource = drugs;
+            InventoryMedicationsListGridView.Refresh();
         }
     }
 }

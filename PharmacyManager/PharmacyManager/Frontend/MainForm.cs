@@ -36,7 +36,7 @@ namespace PharmacyManager
         private void SignOut()
         {
             // Optional: Navigate back to login
-            LogInForm login = new LogInForm();
+            LoginForm login = new LoginForm();
             login.Show();
         }
 

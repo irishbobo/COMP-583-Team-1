@@ -1,7 +1,9 @@
 ﻿using PharmacyManager.Backend.Interfaces;
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Data.SqlClient;
+using System.Linq;
 
 namespace PharmacyManager.Backend
 {
@@ -217,75 +219,211 @@ namespace PharmacyManager.Backend
             IDAsc,
             IDDesc
         }
-        public static List<DrugEntry> SearchDrugs(string name, int count, SortOrder sortOrder)
+        public static List<DrugEntry> SearchDrugs(int count, SortOrder sortOrder, 
+                                                  string name = null, 
+                                                  DateTime? expirationDateStart = null, 
+                                                  DateTime? expirationDateEnd = null, 
+                                                  int? id = null)
         {
-            List<DrugEntry> drugs = new List<DrugEntry>();
+            if (count <= 0) throw new ArgumentOutOfRangeException(nameof(count));
 
-            // Determine the ORDER BY clause based on the sortOrder parameter.
-            // "ExpRecent": Order by ExpirationDate descending (most recent first).
-            // "ExpOldest": Order by ExpirationDate ascending (oldest/earliest first).
-            // "IDAsc": Order by DrugID in ascending order.
-            // "IDDesc": Order by DrugID in descending order.
-            string orderByClause;
+            // Determine which ordering to use.
+            string orderByClause;            
             switch (sortOrder)
             {
                 case SortOrder.ExpRecent:
                     orderByClause = "ORDER BY ExpirationDate DESC";
                     break;
-                case SortOrder.ExpOldest: 
+
+                case SortOrder.ExpOldest:
                     orderByClause = "ORDER BY ExpirationDate ASC";
                     break;
-                case SortOrder.IDAsc: 
-                    orderByClause = "ORDER BY DrugID ASC";
+
+                case SortOrder.IDDesc:
+                    orderByClause = "ORDER BY DrugId DESC";
                     break;
-                case SortOrder.IDDesc: 
-                    orderByClause = "ORDER BY DrugID DESC";
-                    break;
+
                 default:
-                    orderByClause = "ORDER BY DrugID ASC";
+                case SortOrder.IDAsc:
+                    orderByClause = "ORDER BY DrugId ASC";
                     break;
             };
 
-            using (SqlConnection dbConnection = new SqlConnection(LOCAL_CONNECTION_STRING))
+            // Put together the where-condition based on what's provided.
+            var filters = new List<string>();
+            if (string.IsNullOrWhiteSpace(name) == false)
+                filters.Add("Name = @Name");
+            if (expirationDateStart.HasValue)
+                filters.Add("ExpirationDate >= @ExpirationDateStart");
+            if (expirationDateEnd.HasValue)
+                filters.Add("ExpirationDate <= @ExpirationDateEnd");
+            if (id.HasValue)
+                filters.Add("DrugId = @DrugId");
+
+            string whereClause = filters.Count > 0
+                               ? "WHERE " + string.Join(" AND ", filters)
+                               : string.Empty;
+
+            string query = $@"
+                SELECT *
+                FROM dbo.Drug
+                {whereClause}
+                {orderByClause}
+                OFFSET 0 ROWS
+                FETCH NEXT @Count ROWS ONLY;";
+
+            var drugs = new List<DrugEntry>();
+
+            using (var dbConnection = new SqlConnection(LOCAL_CONNECTION_STRING))
             {
-                dbConnection.Open();
-
-                // Build the SQL query:
-                // - It filters rows by Name.
-                // - It sorts the results as determined by orderByClause.
-                // - It returns only the first "count" rows using SQL Server's OFFSET-FETCH syntax.
-                string query = $@"
-            SELECT *
-            FROM dbo.Drug
-            WHERE Name = @Name
-            {orderByClause}
-            OFFSET 0 ROWS
-            FETCH NEXT @Count ROWS ONLY;";
-
-                using (SqlCommand command = new SqlCommand(query, dbConnection))
+                using (var command = new SqlCommand(query, dbConnection))
                 {
-                    // Add parameters to help prevent SQL injection.
-                    command.Parameters.AddWithValue("@Name", name);
-                    command.Parameters.AddWithValue("@Count", count);
+                    // Only add parameters that will actually appear in the query
+                    if (string.IsNullOrWhiteSpace(name) == false)
+                        command.Parameters.Add("@Name", SqlDbType.NVarChar, 50).Value = name;
 
-                    using (SqlDataReader reader = command.ExecuteReader())
+                    if (expirationDateStart.HasValue)
+                        command.Parameters.Add("@ExpirationDateStart", SqlDbType.DateTime).Value = expirationDateStart.Value;
+                    if (expirationDateEnd.HasValue)
+                        command.Parameters.Add("@ExpirationDateEnd", SqlDbType.DateTime).Value = expirationDateEnd.Value;
+
+                    if (id.HasValue)
+                        command.Parameters.Add("@DrugId", SqlDbType.Int).Value = id.Value;
+
+                    command.Parameters.Add("@Count", SqlDbType.Int).Value = count;
+
+                    dbConnection.Open();
+                    using (var reader = command.ExecuteReader())
                     {
                         while (reader.Read())
                         {
-                            // Create a new Drug instance and populate it via your ParseFromReader method.
-                            DrugEntry drug = new DrugEntry();
+                            var drug = new DrugEntry();
                             drug.ParseFromReader(reader);
                             drugs.Add(drug);
                         }
                     }
                 }
-
-                dbConnection.Close();
             }
 
             return drugs;
         }
 
+        public static List<HistoryEntry> GetHistoryEntries(DateTime startDate, DateTime endDate)
+        {
+            if (startDate > endDate)
+                throw new ArgumentException($"{nameof(startDate)} must be ≤ {nameof(endDate)}.");
+
+            const string query = @"
+        SELECT *
+        FROM dbo.History
+        WHERE HistoryTime BETWEEN @StartDate AND @EndDate
+        ORDER BY HistoryTime ASC;";
+
+            var historyEntries = new List<HistoryEntry>();
+
+            using (var dbConnection = new SqlConnection(LOCAL_CONNECTION_STRING))
+            using (var command = new SqlCommand(query, dbConnection))
+            {
+                command.Parameters.Add("@StartDate", SqlDbType.DateTime).Value = startDate;
+                command.Parameters.Add("@EndDate", SqlDbType.DateTime).Value = endDate;
+
+                dbConnection.Open();
+                using (var reader = command.ExecuteReader())
+                {
+                    while (reader.Read())
+                    {
+                        var entry = new HistoryEntry();
+                        entry.ParseFromReader(reader);
+                        historyEntries.Add(entry);
+                    }
+                }
+            }
+
+            return historyEntries;
+        }
+
+        public static Dictionary<int, string> GetDrugNamesForHistory(List<HistoryEntry> historyEntries)
+        {
+            if (historyEntries == null)
+                throw new ArgumentNullException(nameof(historyEntries));
+
+            var drugIds = historyEntries
+                          .Select(h => h.drugID)
+                          .Distinct()
+                          .ToList();
+
+            // No IDs – nothing to look up.
+            if (drugIds.Count == 0)
+                return new Dictionary<int, string>();
+
+            // Build a parameterised IN-list: @id0, @id1, …
+            var paramNames = drugIds
+                             .Select((_, idx) => $"@id{idx}")
+                             .ToArray();
+
+            string query = $@"
+            SELECT DrugId, Name
+            FROM   dbo.Drug
+            WHERE  DrugId IN ({string.Join(", ", paramNames)});";
+
+            var result = new Dictionary<int, string>();
+
+            using (var db = new SqlConnection(LOCAL_CONNECTION_STRING))
+            using (var cmd = new SqlCommand(query, db))
+            {
+                for (int i = 0; i < drugIds.Count; i++)
+                    cmd.Parameters.Add(paramNames[i], SqlDbType.Int).Value = drugIds[i];
+
+                db.Open();
+                using (var reader = cmd.ExecuteReader())
+                {
+                    while (reader.Read())
+                    {
+                        int id = reader.GetInt32(0);
+                        string name = reader.GetString(1);
+                        result[id] = name;
+                    }
+                }
+            }
+
+            return result;
+        }
+
+        public static List<ReportEntry> GenerateWeeklyAdjustmentReports(List<HistoryEntry> historyEntries, IDictionary<int, string> drugIdToName)
+        {
+            if (historyEntries == null) throw new ArgumentNullException(nameof(historyEntries));
+            if (drugIdToName == null) throw new ArgumentNullException(nameof(drugIdToName));
+
+            List<ReportEntry> report = new List<ReportEntry>();
+
+            foreach (IGrouping<string, HistoryEntry> drugGroup in historyEntries.GroupBy(h => drugIdToName[h.drugID]))
+            {
+                // Resolve the friendly name (fallback if missing).
+                string drugName = drugGroup.Key;
+
+                // Work with the rows in chronological order.
+                var ordered = drugGroup.OrderBy(h => h.historyTime).ToList();
+                int totalDelta = ordered.Sum(h => h.afterAmount - h.beforeAmount);
+
+                DateTime first = ordered.First().historyTime;
+                DateTime last = ordered.Last().historyTime;
+                double days = (last - first).TotalDays;
+
+                // Treat any span shorter than a week as exactly one week.
+                double weeks = Math.Max(days / 7.0, 1.0);
+
+                int weeklyAverage = (int)Math.Round(totalDelta / weeks,
+                                                 MidpointRounding.AwayFromZero);
+
+                report.Add(new ReportEntry
+                {
+                    DrugName = drugName,
+                    RecommendedWeeklySupply = weeklyAverage
+                });
+            }
+
+            return report;
+        }
 
     }
 }

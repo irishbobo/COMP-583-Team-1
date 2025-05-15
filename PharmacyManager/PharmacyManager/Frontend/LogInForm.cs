@@ -3,17 +3,17 @@ using System.Windows.Forms;
 
 namespace PharmacyManager
 {
-    public partial class LogInForm : Form
+    public partial class LoginForm : Form
     {
-        public LogInForm()
+        public LoginForm()
         {
             InitializeComponent();
         }
 
         private void buttonLogIn_Click(object sender, EventArgs e)
         {
-            string username = textBoxUserName.Text;
-            string password = textBoxPassword.Text;
+            string username = LoginUsernameTextBox.Text;
+            string password = LoginPasswordTextBox.Text;
             //string username = "a";
             //string password = "1";
 

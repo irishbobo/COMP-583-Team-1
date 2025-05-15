@@ -30,6 +30,7 @@ namespace PharmacyManager
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             this.panelSidebar = new System.Windows.Forms.Panel();
             this.btnInventory = new System.Windows.Forms.Button();
             this.btnAlerts = new System.Windows.Forms.Button();
@@ -97,16 +98,18 @@ namespace PharmacyManager
             this.panelContent.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelContent.Location = new System.Drawing.Point(150, 0);
             this.panelContent.Name = "panelContent";
-            this.panelContent.Size = new System.Drawing.Size(735, 527);
+            this.panelContent.Size = new System.Drawing.Size(834, 527);
             this.panelContent.TabIndex = 0;
             // 
             // MainForm
             // 
-            this.ClientSize = new System.Drawing.Size(885, 527);
+            this.ClientSize = new System.Drawing.Size(984, 527);
             this.Controls.Add(this.panelContent);
             this.Controls.Add(this.panelSidebar);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MinimumSize = new System.Drawing.Size(1000, 350);
             this.Name = "MainForm";
-            this.Text = "Pharmacy Manager";
+            this.Text = "Pharmacy Manager [Authenticated]";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.MainForm_FormClosed);
             this.panelSidebar.ResumeLayout(false);
